@@ -2,7 +2,7 @@
   "name": "test",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "rm -rf dist && webpack"
   },
   "dependencies": {
     "@angular/common": "^2.0.0",
