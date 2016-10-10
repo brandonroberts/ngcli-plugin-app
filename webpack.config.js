@@ -1,20 +1,21 @@
-const NgcWebpackPlugin = require('@ngtools/webpack').NgcWebpackPlugin;
+const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const path = require('path');
 
 module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
-  entry: './app/main.aot.ts',
+  entry: './src/main.ts',
   output: {
     path: './dist',
     publicPath: 'dist/',
     filename: 'app.main.js'
   },
   plugins: [
-    new NgcWebpackPlugin({
-      project: './tsconfig.json',
-      baseDir: path.resolve(__dirname, '')
+    new AotPlugin({
+      tsConfigPath: './tsconfig.json',
+      baseDir: path.resolve(__dirname, ''),
+      entryModule: path.resolve(__dirname, 'src/app/app.module#AppModule')
     })
   ],
   module: {

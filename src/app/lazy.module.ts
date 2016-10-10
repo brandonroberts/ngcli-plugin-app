@@ -11,8 +11,7 @@ export class LazyComponent {}
 @NgModule({
   imports: [
     RouterModule.forChild([
-     {path: '', component: LazyComponent, pathMatch: 'full'},
-     {path: 'feature', loadChildren: './feature/feature.module#FeatureModule'}
+     {path: '', component: LazyComponent}
     ]),
     HttpModule
   ],
