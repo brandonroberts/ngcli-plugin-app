@@ -14,8 +14,9 @@ module.exports = {
   plugins: [
     new AotPlugin({
       tsConfigPath: './tsconfig.json',
-      baseDir: path.resolve(__dirname, ''),
-      entryModule: path.resolve(__dirname, 'src/app/app.module#AppModule')
+      basePath: __dirname,
+      entryModule: 'src/app/app.module#AppModule',
+      typeChecking: false
     })
   ],
   module: {
